@@ -1,12 +1,12 @@
 FROM openbankproject/obp-base
-MAINTAINER OpenBankProject <contact@openbankproject.com>
-EXPOSE 8080 8081 8082
+MAINTAINER Banco Sabadell <innodev@bancsabadell.com>
+EXPOSE 8080 8081 8082 8083
 # Supervisor
 ADD full/supervisor/*.conf /etc/supervisor/conf.d/
 # Clone all repositories
-RUN cd /opt/OBP/ && git clone https://github.com/OpenBankProject/OBP-API.git
+RUN cd /opt/OBP/ && git clone https://github.com/BancoSabadell/OBP-API.git
 RUN cd /opt/OBP/ && git clone https://github.com/OpenBankProject/Social-Finance.git
-RUN cd /opt/OBP/ && git clone https://github.com/OpenBankProject/API-Explorer.git
+RUN cd /opt/OBP/ && git clone https://github.com/BancoSabadell/API-Explorer.git
 # API
 ADD full/props/OBP-API.default.props /opt/OBP/OBP-API/src/main/resources/props/default.props
 ADD full/lift_proto.db.h2.db /opt/OBP/OBP-API/
