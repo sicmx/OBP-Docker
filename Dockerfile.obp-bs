@@ -4,7 +4,7 @@ EXPOSE 8080 8081 8082 8083
 # Supervisor
 ADD full/supervisor/*.conf /etc/supervisor/conf.d/
 # Clone all repositories
-RUN cd /opt/OBP/ && git clone https://github.com/BancoSabadell/OBP-API.git
+RUN cd /opt/OBP/ && git clone -b bancosabadell https://github.com/BancoSabadell/OBP-API.git
 RUN cd /opt/OBP/ && git clone https://github.com/OpenBankProject/Social-Finance.git
 RUN cd /opt/OBP/ && git clone https://github.com/BancoSabadell/API-Explorer.git
 # API
