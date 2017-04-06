@@ -172,6 +172,6 @@ apiOptions.getTransactionTypesIsPublic = true
 
 # Default Bank. Incase the server wants to support a default bank so developers don't have to specify BANK_ID
 # e.g. developers could use /my/accounts as well as /my/banks/BANK_ID/accounts
-defaultBank.bank_id=obp-bank-kafka
+defaultBank.bank_id=bancosabadell
 
 super_admin_user_ids=22b997bc-ea17-4e6e-a746-e77f75402d34
