@@ -174,4 +174,4 @@ apiOptions.getTransactionTypesIsPublic = true
 # e.g. developers could use /my/accounts as well as /my/banks/BANK_ID/accounts
 defaultBank.bank_id=obp-bank-kafka
 
-super_admin_user_ids=
+super_admin_user_ids=22b997bc-ea17-4e6e-a746-e77f75402d34
