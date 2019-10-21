@@ -2,7 +2,7 @@
 
 Files required to create the images available at Docker Hub https://hub.docker.com/r/sicmx/
 
-## Build prendaclic-scmx
+## Build prendaclic-sicmx
 
     $ docker build --no-cache -f Dockerfile.prendaclic-sicmx -t sicmx/prendaclic-sicmx .
 
