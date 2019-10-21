@@ -1,22 +1,22 @@
-FROM openbankproject/obp-base
+FROM sicmx/prendaclic-base
 MAINTAINER Sistemas Integrales de Control <ingjesusrodriguez@sicmx.com.mx>
 EXPOSE 8080 8081 8082 8083
 # Supervisor
 ADD full/supervisor/*.conf /etc/supervisor/conf.d/
 # Clone all repositories
-RUN cd /opt/OBP/ && git clone -b sicmx https://github.com/sicmx/Prenda-Clic.git
-RUN cd /opt/OBP/ && git clone https://github.com/OpenBankProject/Social-Finance.git
-RUN cd /opt/OBP/ && git clone https://github.com/BancoSabadell/API-Explorer.git
+RUN cd /opt/Prenda-Clic/ && git clone -b sicmx https://github.com/sicmx/Prenda-Clic.git
+RUN cd /opt/Prenda-Clic/ && git clone https://github.com/OpenBankProject/Social-Finance.git
+RUN cd /opt/Prenda-Clic/ && git clone https://github.com/BancoSabadell/API-Explorer.git
 # API
-ADD full/props/OBP-API.default.props /opt/OBP/OBP-API/src/main/resources/props/default.props
-ADD full/lift_proto.db.h2.db /opt/OBP/OBP-API/
-RUN cd /opt/OBP/OBP-API/ && sbt reload && sbt compile
+ADD full/props/OBP-API.default.props /opt/Prenda-Clic/Prenda-Clic/src/main/resources/props/default.props
+ADD full/lift_proto.db.h2.db /opt/Prenda-Clic/Prenda-Clic/
+RUN cd /opt/Prenda-Clic/Prenda-Clic/ && sbt reload && sbt compile
 # Social Finance
-ADD full/props/Social-Finance.default.props /opt/OBP/Social-Finance/src/main/resources/props/default.props
-RUN cd /opt/OBP/Social-Finance/ && sbt reload && sbt compile
+ADD full/props/Social-Finance.default.props /opt/Prenda-Clic/Social-Finance/src/main/resources/props/default.props
+RUN cd /opt/Prenda-Clic/Social-Finance/ && sbt reload && sbt compile
 # API Explorer
-ADD full/props/API-Explorer.default.props /opt/OBP/API-Explorer/src/main/resources/props/default.props
-RUN cd /opt/OBP/API-Explorer/ && sbt reload && sbt compile
+ADD full/props/API-Explorer.default.props /opt/Prenda-Clic/API-Explorer/src/main/resources/props/default.props
+RUN cd /opt/Prenda-Clic/API-Explorer/ && sbt reload && sbt compile
 # Run script
-ADD full/run_obp /usr/local/sbin/
-CMD /usr/local/sbin/run_obp
+ADD full/run_prendaclic /usr/local/sbin/
+CMD /usr/local/sbin/run_prendaclic
