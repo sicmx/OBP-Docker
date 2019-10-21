@@ -1,8 +1,8 @@
 FROM maven:3.3-jdk-8
-MAINTAINER OpenBankProject <contact@openbankproject.com>
+MAINTAINER Sistemas Integrales de Control <ingjesusrodriguez@sicmx.com.mx>
 ENV LANG=C.UTF-8 LANGUAGE=C LC_ALL=C.UTF-8 TERM=linux
 # Base directory
-RUN mkdir --parents /opt/OBP
+RUN mkdir --parents /opt/Prenda-Clic
 # Supervisor and debug/monitoring utils
 RUN \
  apt-get update &&\
@@ -23,4 +23,4 @@ RUN \
   wget https://download.elasticsearch.org/elasticsearch/elasticsearch/$ES_PKG_NAME.tar.gz && \
   tar xvzf $ES_PKG_NAME.tar.gz && \
   rm -f $ES_PKG_NAME.tar.gz && \
-  mv /$ES_PKG_NAME /opt/OBP/elasticsearch
+  mv /$ES_PKG_NAME /opt/Prenda-Clic/elasticsearch
