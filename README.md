@@ -1,10 +1,10 @@
 # OBP-Docker
 
-Files required to create the images available at Docker Hub https://hub.docker.com/r/bancosabadell/
+Files required to create the images available at Docker Hub https://hub.docker.com/r/sicmx/
 
 ## Build obp-bs
 
-    $ docker build --no-cache -f Dockerfile.obp-bs -t bancosabadell/obp-bs .
+    $ docker build --no-cache -f Dockerfile.prendaclic-sicmx -t sicmx/prendaclic-sicmx .
 
 ## Run obp-full in docker container
 
@@ -14,4 +14,4 @@ Files required to create the images available at Docker Hub https://hub.docker.c
     -e "OBP_BASE_URL_API_EXPLORER=http://localhost:8082"           \
     -e "OBP_BASE_URL_SOCIAL_FINANCE=http://localhost:8081"         \
     -e "OBP_WEBUI_API_EXPLORER_URL=http://localhost:8082"          \
-    bancosabadell/obp-bs
+    sicmx/prendacli-sicmx
