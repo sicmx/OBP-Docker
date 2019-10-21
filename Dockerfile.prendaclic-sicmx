@@ -4,7 +4,7 @@ EXPOSE 8080 8081 8082 8083
 # Supervisor
 ADD full/supervisor/*.conf /etc/supervisor/conf.d/
 # Clone all repositories
-RUN cd /opt/Prenda-Clic/ && git clone -b sicmx https://github.com/sicmx/Prenda-Clic.git
+RUN cd /opt/Prenda-Clic/ && git clone -b https://github.com/sicmx/Prenda-Clic.git
 RUN cd /opt/Prenda-Clic/ && git clone https://github.com/OpenBankProject/Social-Finance.git
 RUN cd /opt/Prenda-Clic/ && git clone https://github.com/BancoSabadell/API-Explorer.git
 # API
