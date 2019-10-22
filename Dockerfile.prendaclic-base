@@ -5,6 +5,16 @@ ENV LANG=C.UTF-8 LANGUAGE=C LC_ALL=C.UTF-8 TERM=linux
 RUN mkdir --parents /opt/Prenda-Clic
 # Supervisor and debug/monitoring utils
 RUN \
+ cd /var/lib/apt/lists/ &&\
+ rm -fr * &&\
+ cd /etc/apt/sources.list.d/ &&\
+ rm -fr * &&\
+ cd /etc/apt &&\
+ cp sources.list sources.list.old &&\
+ cp sources.list sources.list.tmp &&\
+ sed 's/ubuntuarchive.hnsdc.com/us.archive.ubuntu.com/' sources.list.tmp | tee sources.list &&\
+ rm sources.list.tmp* &&\
+ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys AA8E81B4331F7F50 &&\
  apt-get update &&\
  apt-get upgrade --yes &&\
  apt-get install --yes supervisor bash curl git vim htop telnet net-tools && \
